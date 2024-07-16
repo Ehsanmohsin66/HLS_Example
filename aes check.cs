@@ -1,3 +1,4 @@
+// See https://aka.ms/new-console-template for more information
 using System.Security.Cryptography;
 
 namespace AES
@@ -8,11 +9,11 @@ namespace AES
         {
 
             byte[] key = HexStringToByteArray("000102030405060708090A0B0C0D0E0F");
-            byte[] authKey = HexStringToByteArray("D0D1D2D3D4D5D6D7D8D9DADBDCDDDEDF");
+            byte[] authKey = HexStringToByteArray("30D0D1D2D3D4D5D6D7D8D9DADBDCDDDEDF");
 
             byte[] encryptedData = HexStringToByteArray("F96F7850A8B5CBF0E5CA4B9ACFC45E785C3BE0ECBA11E061353E669B4590E4");
             byte[] tag = HexStringToByteArray("9C227940F6CC4EF2FCCC15B7");
-            byte[] nonce = HexStringToByteArray("54504C000000000001234567");
+            byte[] nonce = HexStringToByteArray("59544C000000000001234567");
 
             byte[] decryptedData = AesGcmDecrypt(encryptedData, key, nonce, authKey, tag);
 
